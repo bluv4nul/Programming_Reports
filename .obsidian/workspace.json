@@ -1,0 +1,176 @@
+{
+  "main": {
+    "id": "434337fe79e18103",
+    "type": "split",
+    "children": [
+      {
+        "id": "1febeff22632f072",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e031c286b0932fc5",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Reports/LR-1/lab_1-Frolov_Andrew_1_IVT-2.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "lab_1-Frolov_Andrew_1_IVT-2"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "4a5f1d6bdeec10de",
+    "type": "split",
+    "children": [
+      {
+        "id": "e2dc59fce4b6bb57",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "8b7a3d23eaf119a5",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "d6ca5dccea5607e0",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "12a9a89fad79eb7e",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "36386ef9f806cbd8",
+    "type": "split",
+    "children": [
+      {
+        "id": "bd6777b6b6086526",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "4b4322a8a2eaf3fb",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Reports/LR-1/lab_1-Frolov_Andrew_1_IVT-2.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for lab_1-Frolov_Andrew_1_IVT-2"
+            }
+          },
+          {
+            "id": "b03bcf65083ba13d",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Reports/LR-1/lab_1-Frolov_Andrew_1_IVT-2.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from lab_1-Frolov_Andrew_1_IVT-2"
+            }
+          },
+          {
+            "id": "253ccd76a5d0a2c3",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "2536ead1ecfc8616",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Reports/LR-1/lab_1-Frolov_Andrew_1_IVT-2.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of lab_1-Frolov_Andrew_1_IVT-2"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "e031c286b0932fc5",
+  "lastOpenFiles": [
+    "Reports/LR-1/lab_1-Frolov_Andrew_1_IVT-2.pdf",
+    "Reports/LR-1/lab_1-Frolov_Andrew_1_IVT-2.md"
+  ]
+}
