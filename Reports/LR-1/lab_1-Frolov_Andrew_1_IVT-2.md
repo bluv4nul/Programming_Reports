@@ -3,12 +3,12 @@
 Простые условные конструкции.
 Основы работы со статическими массивами.
 
-Фролов Андрей, 1 курс, ИВТ-2
+## Фролов Андрей, 1 курс, ИВТ-2
 
 #### **Комплект 1.** Начало программирования. Операторы, вычисления, ввод-вывод.
 
-###### **Задание 1.2.** 
-Написать простую программу. Ввести два числа с клавиатуры, вычислить их сумму и напечатать результат. Использовать функцию printf для приглашений на ввод и для распечатки результата. Использовать функцию scanf для ввода каждого числа отдельно с клавиатуры. Для получения доступа к функциям printf и scanf включить в программу заголовочный файл stdio.h. Использовать корректные спецификаторы форматирования. Здесь и далее для распечатки надписей на экране использовать латинские буквы для избежания проблем с кодировками символов.
+##### **Задание 1.2.** 
+Написать простую программу. Ввести два числа с клавиатуры, вычислить их сумму и напечатать результат. Использовать функцию printf для приглашений на ввод и для распечатки результата. Использовать функцию scanf для ввода каждого числа отдельно с клавиатуры. Для получения доступа к функциям printf и scanf включить в программу заголовочный файл stdio.h. Использовать корректные спецификаторы форматирования. Здесь и далее для распечатки надписей на экране использовать латинские буквы для избежание проблем с кодировками символов.
 
 ###### Математическая модель:
 $$ res = a + b $$
@@ -21,11 +21,27 @@ $$ res = a + b $$
 | res | int | Результат |
 
 ###### Код программы:
-![[Pasted image 20250308153121.png]]
-###### Результат работы программы:
-![[Pasted image 20250308153218.png]]
+``` c
+#include <stdio.h>
+#include <Windows.h>
 
-###### **Задание 1.3.** 
+int main(void){
+
+    SetConsoleOutputCP(CP_UTF8);
+
+    int a,b;
+    printf("Введите 1 число\t");
+    scanf("%d",&a);
+    printf("Введите 2 число\t");
+    scanf("%d",&b);
+    int res = a + b;
+    printf("Результат: %d",res);
+
+}
+```
+###### Результат работы программы:
+![[Pasted image 20250308191750.png]]
+##### **Задание 1.3.** 
 Вычислить значение выражения введя x и y с клавиатуры. Подберите значения аргументов x и y самостоятельно за исключением тривиальных значений. Напечатайте вычисленное значение u(x, y) на экране. Включить в программу заголовочный файл math.h для доступа к математическим функциям.
 ###### Математическая модель:
 $$
@@ -46,14 +62,31 @@ $$
 | res        | Double | Результат            |
 
 ###### Код программы:
+``` c
+#include <stdio.h>
+#include <math.h>
+#include <Windows.h>
 
-![](file:///C:/Users/andre/AppData/Local/Temp/msohtmlclip1/01/clip_image008.png)
+int main(void){
 
+    SetConsoleOutputCP(CP_UTF8);
+
+    double x,y;
+    printf("Введите x\t");
+    scanf("%lf",&x);
+    printf("Введите y\t");
+    scanf("%lf",&y);
+    
+    double chislitel = 1 + (sin(x+y)*sin(x+y));
+    double znamenatel = 2 + (fabs(x - (2*x*x)/(1+fabs(sin(x+y)))));
+    double res = chislitel/znamenatel;
+    
+    printf("U(x,y) =  %lf", res);
+}
+```
 ###### Результат работы программы:
-
-![](file:///C:/Users/andre/AppData/Local/Temp/msohtmlclip1/01/clip_image009.png)
-
-###### **Задание 1.4.** 
+![[Pasted image 20250308192017.png]]
+##### **Задание 1.4.** 
 Вычислить значение выражения для следующих значений:
 $$
 a = 0.12, \quad b = 3.5, \quad c = 2.4, \quad x = 1.4;
@@ -83,16 +116,40 @@ $$
 |   res   | Double |        Результат         |
 
 ###### Код программы:
+``` c
+#include <stdio.h>
+#include <math.h>
+#include <Windows.h>
 
-![](file:///C:/Users/andre/AppData/Local/Temp/msohtmlclip1/01/clip_image015.png)
+double h(double a,double b,double c,double x){
+    double left = (x-a)/(pow(x*x+a*a,1.0/3.0));
+    double right = (4 * pow(pow(x*x+b*b,3),1.0/4.0))/(2 + a + b + pow(pow(x-c,2),1.0/3.0));
+    double res = -1 * left - right;
+    return res;
+}
 
+int main(void){
+
+    SetConsoleOutputCP(CP_UTF8);
+
+    double A[] = {0.12,0.12,0.27};
+    double B[] = {3.5,3.5,3.9};
+    double C[] = {2.4,2.4,2.8};
+    double X[] = {1.4,1.6,1.8};
+
+    for(int i = 0; i < 3; i++){
+
+        printf("%lf", h(A[i], B[i], C[i], X[i]));
+        printf("\n");
+
+    }
+}
+```
 ###### Результат работы программы:
-
-![](file:///C:/Users/andre/AppData/Local/Temp/msohtmlclip1/01/clip_image016.png)
-
+![[Pasted image 20250308192415.png]]
 #### **Комплект 2.** Организация циклов. Условные конструкции.
 
-###### Задание 2.1. 
+##### Задание 2.1. 
 Вычислить используя цикл for координаты планеты Марс относительно Земли с течением времени t. Распечатать на экране координаты для каждой итерации по t. Координаты планеты Марс для каждой итерации задаются заданы формулами:
 $$
 x = r_1 \cos(w_1 t) - r_2 \cos(w_2 t),
@@ -135,11 +192,38 @@ $$
 |  $x$  | double |   координата X    |
 |  $y$  | double |   координата Y    |
 ###### Код программы:
-![[Pasted image 20250308171735.png]]
+``` c
+#include <math.h>
+#include <stdio.h>
+#include <Windows.h>
+#define M_PI  3.14159265358979323846
 
+
+int main(void)
+{
+    SetConsoleOutputCP(CP_UTF8);
+
+    double r1 = 227.9;
+    double r2 = 149.6;
+    double T1 = 687;
+    double T2 = 365.25;
+
+    double w1 = (2*M_PI)/T1;
+    double w2 = (2*M_PI)/T2;
+
+
+    for(int t = 0; t <= 780; t+= 20)
+    {
+        double x = r1*cos(w1*t) - r2*cos(w2*t);
+        double y = r1*sin(w1*t) - r2*sin(w2*t);
+        printf("t=%d\tx=%lf\ty=%lf\n", t, x, y); 
+    }
+
+}
+```
 ###### Результат работы:
-![[Pasted image 20250308171826.png]]
-###### Задача 2.2. 
+![[Pasted image 20250308192542.png]]
+##### Задача 2.2. 
 Вычислить определённый интеграл от заданной функции методом трапеций:
 $$
 \int\limits_{a}^{b} f(x) dx = \int\limits_{a}^{b} e^{x+2} dx \, .
@@ -164,10 +248,44 @@ $$
 | $r$                | double | результат для возврата значения функции |
 
 ###### Код программы:
-![[Pasted image 20250308172546.png]]
+``` c
+#include <math.h>
+#include <stdio.h>
+#include <Windows.h>
+
+double f(double x)
+{
+	return exp(x+2);
+}
+double trapezoid(double a, double b, double n)
+{
+	double r, h;
+	h = (b - a) / n;
+	r = 0;
+	for (double i = a + h; i <= b - h; i = i + h)
+	{
+		r = r + f(i);ч10
+        
+	}
+	return h * ((f(a) + f(b)) / 2 + r);
+}
+
+int main(void)
+{
+    SetConsoleOutputCP(CP_UTF8);
+    double a, b, n;
+    printf("Enter the lower integration limit (a):\n");
+    scanf_s("%lf", &a);
+    printf("Enter the upper integration limit (b):\n");
+    scanf_s("%lf", &b);
+    printf("Enter the number of splits (n):\n");
+    scanf_s("%lf", &n);
+    printf("%lf", trapezoid(a,b,n));
+}
+```
 ###### Результат работы: 
-![[Pasted image 20250308172617.png]]
-###### Задача 2.3. 
+![[Pasted image 20250308192721.png]]
+##### Задача 2.3. 
 Организовать и распечатать последовательность чисел Падована1 , не превосходящих число m, введенное с клавиатуры. Числа Падована представлены следующим рядом: 1, 1, 1, 2, 2, 3, 4, 5, 7, 9, 12, 16, 21, 28, 37, 49, 65, 86, 114, 151, 200, 265, ... Использовать конструкцию for и простые варианты условной конструкции if else. Для этих чисел заданы формулы:
 $$
 \begin{align*}
@@ -194,11 +312,37 @@ $$
 | i    | int | параметр цикла            |
 
 ###### Код программы:
-![[Pasted image 20250308173113.png]]
+```c
+#include <math.h>
+#include <stdio.h>
+#include <Windows.h>
 
+int P(int n)
+{
+    if(n == 1 || n == 0 || n == 2)
+    {
+        return 1;
+    }
+    return P(n-2) + P(n-3);
+}
+
+int main(void)
+{
+    SetConsoleOutputCP(CP_UTF8);
+
+    int m;
+    printf("Введите число m: ");
+    scanf("%d", &m);
+
+    printf("Последовательность чисел Падована: ");
+    for(int i = 0; P(i) <= m; i++){
+        printf("%d ",P(i));
+    }
+}
+```
 ###### Результат работы: 
-![[Pasted image 20250308173127.png]]
-###### Задача 2.4.
+![[Pasted image 20250308192841.png]]
+##### Задача 2.4.
 С клавиатуры вводится трёхзначное число, считается сумма его цифр. Если сумма цифр числа больше 10, то вводится следующее трёхзначное число, если сумма меньше либо равна 10 — программа завершается.
 ###### Математическая модель:
 $$
@@ -217,10 +361,43 @@ $$
 | res              | int | переменная для возврата результата работы функции |
 
 ###### Код программы:
-![[Pasted image 20250308173728.png]]
+```c
+#include <math.h>
+#include <stdio.h>
+#include <Windows.h>
+
+int sum_of_digits(int n)
+{
+    int res = 0;
+    while(n>0){
+        res += n%10;
+        n/=10;
+    }
+    return res;
+}
+
+int main(void)
+{
+    SetConsoleOutputCP(CP_UTF8);
+    
+    int n = 999;
+    while(sum_of_digits(n)>10)
+    {
+        printf("Введите трехзначное число: ");
+        scanf("%d", &n);
+        printf("Сумма цифр числа: %d\n",sum_of_digits(n));
+        if(n>999 || n < 100)
+        {
+            printf("Введено не трехзначное число!");
+            return 0;
+        }   
+    }
+}
+```
 ###### Результат работы: 
-![[Pasted image 20250308173805.png]]
-###### Задача 3.1. 
+![[Pasted image 20250308192928.png]]
+#### Комплект 3. Основы работы со статическими массивами.
+##### Задача 3.1. 
 Для некоторого числового вектора X, введённого с клавиатуры, вычислить значения вектора $Y = X · X$ ($y_i = x_i · x_i$ — поэлементно).
 ###### Математическая модель:
 $Y = X · X$
@@ -233,11 +410,41 @@ $Y = X · X$
 | i              | int | Параметр цикла |
 
 ###### Код программы:
-![[Pasted image 20250308174106.png]]
-###### Результат работы: 
-![[Pasted image 20250308174155.png]]
+```c
+#include <math.h>
+#include <stdio.h>
+#include <Windows.h>
 
-###### Задача 3.2.
+int main(void)
+{
+    
+    SetConsoleOutputCP(CP_UTF8);
+    int length;
+
+    printf("Введите длинну вектора: ");
+    scanf("%d", &length);
+    int vector[length] = {};
+
+    for(int i = 0; i < length; i++)
+    {
+        printf("Введите %d число вектора: ", i);
+        scanf("%d", &vector[i]);
+        vector[i] = vector[i]*vector[i];
+    }
+
+    printf("Полученный вектор ( ");
+
+    for (int i = 0; i < length; i++)
+    {
+        printf("%d ", vector[i]);
+    }
+
+    printf(")");
+}
+```
+###### Результат работы: 
+![[Pasted image 20250308193009.png]]
+##### Задача 3.2.
 Для некоторого числового массива X, введённого с клавиатуры поэлементно, изменить порядок элементов на обратный и распечатать результат на экране.
 ###### Математическая модель:
 $$
@@ -256,10 +463,43 @@ $$
 | t      | int | номер элемента с 0 |
 
 ###### Код программы:
-![[Pasted image 20250308182750.png]]
+``` c
+#include <math.h>
+#include <stdio.h>
+#include <Windows.h>
+
+int main(void)
+{
+    SetConsoleOutputCP(CP_UTF8);
+
+    int length;
+
+    printf("Введите длинну массива: ");
+    scanf("%d", &length);
+
+    int arr[length] = {};
+    int t = 0;
+
+    for(int i = length-1; i > -1; i--)
+    {
+        printf("Введите %d элемент массива: ", t);
+        scanf("%d", &arr[i]);
+        t++;
+    }
+
+    printf("Получившийся массив: [ ");
+    for(int i = 0; i < length; i ++)
+    {
+        printf("%d ", arr[i]);
+    }
+    printf("]");
+
+    
+}
+```
 ###### Результат работы: 
-![[Pasted image 20250308182846.png]]
-###### Задача 3.3. 
+![[Pasted image 20250308193043.png]]
+##### Задача 3.3. 
 Транспонировать матрицу:
 $$
 \begin{pmatrix}
@@ -280,10 +520,38 @@ $$a[i][j]=a[j][i]$$
 | i,j | int | параметры цикла           |
 
 ###### Код программы:
-![[Pasted image 20250308183527.png]]
+```c
+#include <math.h>
+#include <stdio.h>
+#include <Windows.h>
+
+int main(void)
+{
+    SetConsoleOutputCP(CP_UTF8);
+    
+    int A[3][3] = { {1,2,3},{4,5,6},{7,8,9} };
+    int A_T[3][3] = { }; 
+
+    for(int i = 0; i < 3; i++)
+    {
+        for(int j = 0; j < 3; j++)
+        {
+            A_T[i][j] = A[j][i];
+        }
+    }
+    for(int i = 0; i < 3; i++)
+    {
+        for(int j = 0; j < 3; j++)
+        {
+            printf("%d ", A_T[i][j]);
+        }
+        printf("\n");
+    }
+}
+```
 ###### Результат работы: 
-![[Pasted image 20250308183657.png]]
-###### Задача 3.4. 
+![[Pasted image 20250308193111.png]]
+##### Задача 3.4. 
 Преобразовать исходную матрицу так, чтобы первый элемент каждой строки был заменён средним арифметическим элементов этой строки.
 ###### Математическая модель:
 $$a[i][1]=a[1][1]+a[2][i]+...+a[i][j]$$
@@ -298,10 +566,57 @@ $$a[i][1]=a[1][1]+a[2][i]+...+a[i][j]$$
 | i,j  | int | параметры цикла        |
 
 ###### Код программы:
-![[Pasted image 20250308184934.png]]
+```c
+#include <math.h>
+#include <stdio.h>
+#include <Windows.h>
+
+int main(void)
+{
+    SetConsoleOutputCP(CP_UTF8);
+
+    int A[3][3] = { {11,27,93},{184,335,16},{71,80,912} };
+    int s = 0;
+    int rows = sizeof(A) / sizeof(A[0]);
+    int cols = sizeof(A[0]) / sizeof(A[0][0]);
+
+
+    printf("Исходная матрица: \n");
+    for(int i = 0; i < rows; i++)
+    {
+        for(int j = 0; j < cols; j++)
+        {
+            printf("%d ", A[i][j]);
+        }
+        printf("\n");
+    }
+
+    for (int i = 0; i < rows; i++)
+    {
+        for (int j = 0; j < cols; j++)
+        {
+            s += A[i][j];
+        }
+        A[i][0] = s/cols;
+        s = 0;
+    }
+    printf("\n");
+    printf("Полученная матрица: \n");
+    for(int i = 0; i < 3; i++)
+    {
+        for(int j = 0; j < 3; j++)
+        {
+            printf("%d ", A[i][j]);
+        }
+        printf("\n");
+    }
+
+    
+}
+```
 ###### Результат работы: 
-![[Pasted image 20250308184952.png]]
-###### Задача 3.5. 
+![[Pasted image 20250308193155.png]]
+##### Задача 3.5. 
 Реализовать самостоятельно алгоритм сортировки вставками (без создания своих функций, внутри функции main).
 ###### Математическая модель:
 $$
@@ -333,7 +648,43 @@ $$
 | i,j    | int | параметры цикла                       |
 
 ###### Код программы:
-![[Pasted image 20250308185622.png]]
+``` c
+#include <math.h>
+#include <stdio.h>
+#include <Windows.h>
 
+int main(void)
+{
+    SetConsoleOutputCP(CP_UTF8);
+
+    int arr[] = {42, 17, 89, 5, 23, 56, 34, 72, 11, 63, 28, 95, 50, 7, 39};
+    int temp;
+    int lentgh = sizeof(arr)/sizeof(int);
+
+    printf("\nИсходная матрица: \n");
+
+    for (int i = 0; i < lentgh; i++)
+    {
+        printf("%d ", arr[i]);
+    }
+    
+
+    for (int i = 1; i < lentgh; i++)
+    {
+        for (int j = i; j > 0 && arr[j-1]>arr[j]; j--)
+        {
+                temp = arr[j-1];
+                arr[j-1] = arr[j];
+                arr[j] = temp;
+        }    
+    }
+    
+    printf("\nПолученная матрица: \n");
+    for(int i = 0; i < lentgh; i++)
+    {
+        printf("%d ", arr[i]);
+    }
+}
+```
 ###### Результат работы: 
-![[Pasted image 20250308185638.png]]
+![[Pasted image 20250308193235.png]]
