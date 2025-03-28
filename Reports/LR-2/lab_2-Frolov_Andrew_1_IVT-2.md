@@ -12,11 +12,13 @@ ___
 - $p^{(n)}$ — указатель уровня $n$ ($p^{(0)} \in \mathbb{R}$)
 
 **Иерархия:**
+
 $$
 p^{(3)} \to p^{(2)} \to p^{(1)} \to \underset{2.0}{p^{(0)}}
 $$
 
 **Операции:**
+
 $$
 \begin{align*}
 \mathcal{M} &: 
@@ -34,6 +36,7 @@ p^{(1)} = \mathcal{M}(\text{sizeof}(p^{(0)}))
 \end{align*}
 $$
 **Инварианты:**
+
 $$
 \forall k \in \{1,2,3\} \quad p^{(k)} \neq \text{NULL} \text{ при } \mathcal{F}(p^{(k)})
 $$
@@ -130,10 +133,13 @@ int main(void)
 ___
 #### Задача 3
 ##### Математическая модель:
+
 $$
 \begin{align*}
+
 a>b \to print(a) \\
 a<b \to pritn(b)
+
 \end{align*}
 $$
 ##### Список идентификаторов:
@@ -180,6 +186,7 @@ int main(void)
 ___
 #### Задача 4
 ##### Математическая модель:
+
 $$
 \begin{align*}
 Массив = (p,\ n),\ где:\\
