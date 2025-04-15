@@ -73,10 +73,9 @@ int main(void)
 ##### Математическая модель:
 
 $$
-
 \begin{align*}
-Book = (title,author,year) 
-\begin{cases}
+
+Book = (title,author,year) \begin{cases}
 title &\in строка \ название \ книги \ (до \ 50 \ символов)\\
 author &\in строка \ название \ книги \ (до \ 50 \ символов)\\
 year &\in \mathbb{Z}
@@ -170,7 +169,8 @@ int main(void)
 $$
 
 \begin{align*}
-Season = \left\{WINTER,SPRING,SUMMER,AUTUMN\right\} \to\
+
+Season = \left\{WINTER,SPRING,SUMMER,AUTUMN\right\} \to
 
 \begin{cases}
 WINTER \ если \ (12,1,2)  \\
