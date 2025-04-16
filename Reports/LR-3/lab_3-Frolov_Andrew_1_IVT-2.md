@@ -49,6 +49,41 @@ int main(void)
 • распечатка вектора в консоли.
 В структуре вектора указать имя вектора в качестве отдельного поля этой структуры.
 ##### Математическая модель:
+Вектор $\vec{v}$ в трёхмерном пространстве задаётся тремя координатами и именем:
+
+$$
+\vec{v} = (v_x, v_y, v_z), \quad \text{где имя} = \text{"v"}
+$$
+
+Скалярное произведение векторов $\vec{a} = (a_x, a_y, a_z)$ и $\vec{b} = (b_x, b_y, b_z)$:
+
+$$
+\vec{a} \cdot \vec{b} = a_x b_x + a_y b_y + a_z b_z
+$$
+
+Векторное произведение:
+
+$$
+\vec{a} \times \vec{b} = 
+\begin{vmatrix}
+\mathbf{i} & \mathbf{j} & \mathbf{k} \\
+a_x & a_y & a_z \\
+b_x & b_y & b_z
+\end{vmatrix}
+= (a_y b_z - a_z b_y)\mathbf{i} - (a_x b_z - a_z b_x)\mathbf{j} + (a_x b_y - a_y b_x)\mathbf{k}
+$$
+
+Модуль вектора:
+
+$$
+|\vec{v}| = \sqrt{v_x^2 + v_y^2 + v_z^2}
+$$
+
+Формат представления вектора:
+
+$$
+\text{name} = (x, y, z)
+$$
 ##### Список идентификаторов:
 
 | Имя           | Тип    | Смысл                                    |
@@ -279,7 +314,9 @@ int main(void)
 Двусвязный список (Doubly Linked List)
  Основное определение
 $$
+\begin{align*}
 \text{DList} = (N, head, tail)
+\end{align*}
 $$
 где:
 - $N = \{n_i = (data_i, prev_i, next_i)\}$ - множество узлов
@@ -417,7 +454,7 @@ int main(void){
 Напишите программу, которая использует указатель на некоторое объединение union.
 ##### Математическая модель:
 $$
- \begin{align*}
+\begin{align*}
 Union &= (int\ i/double\ d / char\ ch) \\
 *ptr &-указатель,\ указывающий\ на\ область\ памяти\ выделенную\ пол\ тип\ Union
 \end{align*}
@@ -468,7 +505,6 @@ $$
 number &= \left\{n, bytes\right\} \\
 n &\in \mathbb{R}\\
 bytes &= побайтовое\ представление\ n
-
 \end{align*}
 $$
 ##### Список идентификаторов:
@@ -511,7 +547,6 @@ $$
 \begin{align*}
 enum = \left\{MONDAY,TUESDAY,WEDNESDAY,THURSDAY,FRIDAY,SATURDAY,SUNDAY\right\}
 \end{align*}
-
 $$
 ##### Список идентификаторов:
 | Имя      | Тип  | Смысл                    |
