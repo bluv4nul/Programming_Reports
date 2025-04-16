@@ -74,18 +74,14 @@ int main(void)
 
 $$
 \begin{align*}
-
 Book = (title,author,year) \begin{cases}
 title &\in строка \ название \ книги \ (до \ 50 \ символов)\\
 author &\in строка \ название \ книги \ (до \ 50 \ символов)\\
 year &\in \mathbb{Z}
 \end{cases}
-
 \end{align*}
-
 $$
 $$
-
 \begin{align*}
 &printBook(Book \ book) \to void \\ \\
 &printBook = 
@@ -95,7 +91,6 @@ $$
 Вывести \ год написания книги
 \end{cases}
 \end{align*}
-
 $$
 ##### Список идентификаторов:
 
@@ -167,20 +162,15 @@ int main(void)
 ##### Математическая модель:
 
 $$
-
 \begin{align*}
-
 Season = \left\{WINTER,SPRING,SUMMER,AUTUMN\right\} \to
-
 \begin{cases}
 WINTER \ если \ (12,1,2)  \\
 SPRING \ если \ (3, 4, 5)  \\
 SUMMER \ если \ (6,7,8)  \\ 
 WINTER \ если \ (9,10,11)  \\
 \end{cases}
-
 \end{align*}
-
 $$
 ##### Список идентификаторов:
 
