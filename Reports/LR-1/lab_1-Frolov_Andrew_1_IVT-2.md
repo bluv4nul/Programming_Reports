@@ -273,7 +273,7 @@ double trapezoid(double a, double b, double n)
 	r = 0;
 	for (double i = a + h; i <= b - h; i = i + h)
 	{
-		r = r + f(i);ч10
+		r = r + f(i);
         
 	}
 	return h * ((f(a) + f(b)) / 2 + r);
