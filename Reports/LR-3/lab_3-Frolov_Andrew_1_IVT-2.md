@@ -610,8 +610,4 @@ int main(void)
 }
 ```
 ##### Результат работы: 
-<<<<<<< HEAD
-![](Programming/Reports/LR-3/2.4.png)
-=======
 ![](2.4.png)
->>>>>>> c9cda719e4b96876e72f2770c4006503413879bd
