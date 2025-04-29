@@ -164,7 +164,7 @@ $$
 \begin{align*}
 \exp(z) &= 1 + z + \frac{1}{2!}z^2 + \frac{1}{3!}z^3 + \dots +\frac{1}{n!}z^n\\
 \exp(z) &= \frac{\exp(z-1)*z}{n}
-\end{align*} 
+\end{align*}
 $$
 ##### Список идентификаторов:
 
