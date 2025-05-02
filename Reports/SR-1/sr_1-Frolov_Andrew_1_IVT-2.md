@@ -161,7 +161,7 @@ int main(void)
 • Для определения сезона можно использовать условные операторы (if-else) или конструкцию switch. 
 ##### Математическая модель:
 
-$$
+```math
 \begin{align*}
 Season = \left\{WINTER,SPRING,SUMMER,AUTUMN\right\} \to
 \begin{cases}
@@ -171,7 +171,7 @@ SUMMER \ если \ (6,7,8)  \\
 WINTER \ если \ (9,10,11)  \\
 \end{cases}
 \end{align*}
-$$
+```
 ##### Список идентификаторов:
 
 | Имя    | Тип         | Смысл                              |
