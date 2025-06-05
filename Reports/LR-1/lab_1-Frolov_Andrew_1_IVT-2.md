@@ -122,7 +122,7 @@ $$
 
 double h(double a,double b,double c,double x){
     double left = (x-a)/(pow(x*x+a*a,1.0/3.0));
-    double right = (4 * pow(pow(x*x+b*b,3),1.0/4.0))/(2 + a + b + pow(pow(x-c,2),1.0/3.0));
+    double right = (4 * pow(x*x+b*b,3.0/4.0))/(2 + a + b + pow((x-c)*(x-c),1.0/3.0));
     double res = -1 * left - right;
     return res;
 }
@@ -381,7 +381,7 @@ int sum_of_digits(int n)
     int res = 0;
     while(n>0){
         res += n%10;
-        n/=10;
+        n /= 10;
     }
     return res;
 }
@@ -395,12 +395,12 @@ int main(void)
     {
         printf("Введите трехзначное число: ");
         scanf("%d", &n);
-        printf("Сумма цифр числа: %d\n",sum_of_digits(n));
-        if(n>999 || n < 100)
+        if(n>999 || n<100)
         {
             printf("Введено не трехзначное число!");
             return 0;
-        }   
+        } 
+        printf("Сумма цифр числа: %d\n",sum_of_digits(n));
     }
 }
 ```
@@ -465,12 +465,12 @@ newarr[] = (3,2,1)
 $$
 ###### Список идентификаторов:
 
-| Имя    | Тип | Смысл              |
-| ------ | --- | ------------------ |
-| lentgh | int | длинна массива     |
-| arr[]  | int | массив             |
-| i      | int | параметр цикла     |
-| t      | int | номер элемента с 0 |
+| Имя | Тип   | Смысл                        |
+| --- | ----- | ---------------------------- |
+| n   | int   | количество элементов массива |
+| X   | int[] | массив                       |
+| i   | int   | параметр цикла               |
+
 
 ###### Код программы:
 ``` c
@@ -482,29 +482,31 @@ int main(void)
 {
     SetConsoleOutputCP(CP_UTF8);
 
-    int length;
-
-    printf("Введите длинну массива: ");
-    scanf("%d", &length);
-
-    int arr[length] = {};
-    int t = 0;
-
-    for(int i = length-1; i > -1; i--)
-    {
-        printf("Введите %d элемент массива: ", t);
-        scanf("%d", &arr[i]);
-        t++;
-    }
-
-    printf("Получившийся массив: [ ");
-    for(int i = 0; i < length; i ++)
-    {
-        printf("%d ", arr[i]);
-    }
-    printf("]");
-
+    int n;
     
+    printf("Введите количество элементов массива: ");
+    scanf("%d", &n);
+    
+    int X[n];
+    
+    printf("Введите %d элементов массива:\n", n);
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &X[i]);
+    }
+    
+    for (int i = 0; i < n / 2; i++) {
+        X[i] ^= X[n-1-i];
+        X[n-1-i] ^= X[i];
+        X[i] ^= X[n-1-i];
+    }
+    
+    printf("Массив после разворота:\n");
+    for (int i = 0; i < n; i++) {
+        printf("%d ", X[i]);
+    }
+    printf("\n");
+    
+    return 0;
 }
 ```
 ###### Результат работы: 

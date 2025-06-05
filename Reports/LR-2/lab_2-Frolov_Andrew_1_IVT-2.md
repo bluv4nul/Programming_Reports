@@ -224,7 +224,6 @@ ___
         }
         
         free(arr);
-        free(ptr);
     }
 ```
 ##### Результат работы: 
@@ -259,7 +258,6 @@ int main(void)
     {
         printf("Байт%d: %02x\n",i,(unsigned char)ptr[i]);
     }
-    free(ptr);
 }
 ```
 ##### Результат работы: 
