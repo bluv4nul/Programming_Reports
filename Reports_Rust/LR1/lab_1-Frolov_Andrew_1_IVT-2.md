@@ -328,7 +328,7 @@ fn main() {
 | employees         | vec![]   | Вектор сотрудников   |
 | designeers        | vec![]   | Дизайнеры            |
 | developers        | vec![]   | Разработчики         |
-| team_lead         | vec![]   | Тим Лид              |
+| team_lead         | vec![]   | Тим Л                |
 ##### Код программы:
 ```rust
 struct Employee{
@@ -398,3 +398,4 @@ fn main(){
 }
 ```
 ##### Результат работы: 
+![](8.png)
